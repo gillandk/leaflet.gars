@@ -23,7 +23,7 @@
         "npm": ">= 8.x"
     },
     "license": "MIT",
-    "main": "dist/index.js",
+    "main": "index.html",
     "dependencies": {
         "@ngageoint/color-js": "^2.1.0",
         "@ngageoint/gars-js": "^0.0.1-beta.1",
