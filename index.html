@@ -16,7 +16,7 @@
 
     <script src="https://unpkg.com/leaflet@1.9.2/dist/leaflet.js" 
         integrity="sha256-o9N1jGDZrf5tS+Ft4gbIK7mYMipq9lqpVJ91xHSyKhg=" crossorigin=""></script>
-    <script type="text/javascript" src="./lib/GARSLayer.ts"></script>
+    <script type="module" src="./dist/main.js"></script>
 
     <script type="text/javascript">
       map = new L.Map('map');
@@ -26,22 +26,13 @@
       const osmAttrib='Map data © <a href="http://openstreetmap.org">OpenStreetMap</a> contributors';
       const osm = new L.TileLayer(osmUrl, {minZoom: 1, maxZoom: 20, attribution: osmAttrib});
 
-      map.setView(new L.LatLng(47.11922345184392, -88.54714393615723),11);
+      map.setView(new L.LatLng(0, 0),3);
 
       map.addLayer(osm);
 
-      const options = { };
-      const gars = new GARSLayer(options);
-      map.addLayer(gars);
-
       L.control.layers({
           'osm': osm
-        }, {
-          'GARS': gars
         }).addTo(map);
-
-      //Completely optional, I just included the MousePosition thing for testing convenience
-      L.control.mousePosition().addTo(map);
     </script>
   </body>
 </html>
