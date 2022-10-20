@@ -28,14 +28,12 @@
     "dependencies": {
         "@ngageoint/color-js": "^2.1.0",
         "@ngageoint/gars-js": "^0.0.1-beta.1",
-        "sprintf-js": "^1.1.2",
-        "tstl": "^2.5.8"
+        "leaflet": "^1.9.2"
     },
     "devDependencies": {
         "@tsconfig/recommended": "^1.0.1",
         "@types/chai": "^4.3.3",
         "@types/mocha": "9.1.1",
-        "@types/sprintf-js": "^1.1.2",
         "chai": "4.3.6",
         "coveralls": "3.1.1",
         "mocha": "^10.0.0",
