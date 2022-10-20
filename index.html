@@ -1,0 +1,47 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Leaflet GARS</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.2/dist/leaflet.css"
+        integrity="sha256-sA+zWATbFveLLNqWO2gtiw3HL/lh1giY/Inf1BJ0z14=" crossorigin=""/>
+    <style type="text/css">
+      html, body { width: 100%; height: 100%; margin: 0; }
+      #map { width: 100%; height: 100%; }
+    </style>
+  </head>
+
+  <body>
+    <div id="map"></div>
+
+    <script src="https://unpkg.com/leaflet@1.9.2/dist/leaflet.js" 
+        integrity="sha256-o9N1jGDZrf5tS+Ft4gbIK7mYMipq9lqpVJ91xHSyKhg=" crossorigin=""></script>
+    <script type="text/javascript" src="./lib/GARSLayer.ts"></script>
+
+    <script type="text/javascript">
+      map = new L.Map('map');
+
+      // create the tile layer with correct attribution
+      const osmUrl='http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png';
+      const osmAttrib='Map data © <a href="http://openstreetmap.org">OpenStreetMap</a> contributors';
+      const osm = new L.TileLayer(osmUrl, {minZoom: 1, maxZoom: 20, attribution: osmAttrib});
+
+      map.setView(new L.LatLng(47.11922345184392, -88.54714393615723),11);
+
+      map.addLayer(osm);
+
+      const options = { };
+      const gars = new GARSLayer(options);
+      map.addLayer(gars);
+
+      L.control.layers({
+          'osm': osm
+        }, {
+          'GARS': gars
+        }).addTo(map);
+
+      //Completely optional, I just included the MousePosition thing for testing convenience
+      L.control.mousePosition().addTo(map);
+    </script>
+  </body>
+</html>
