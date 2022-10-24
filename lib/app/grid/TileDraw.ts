@@ -27,25 +27,6 @@ export class TileDraw {
   }
 
   /**
-   * Add the polyline to the path
-   *
-   * @param tile tile
-   * @param canvas line path
-   * @param line line to draw
-   */
-  private static addPolyline(tile: GridTile, canvas: CanvasRenderingContext2D, line: GridLine): void {
-    const metersLine = line.toMeters();
-    const point1 = metersLine.getPoint1();
-    const point2 = metersLine.getPoint2();
-
-    const pixel = point1.getPixelFromTile(tile);
-    canvas.moveTo(pixel.getX(), pixel.getY());
-
-    const pixel2 = point2.getPixelFromTile(tile);
-    canvas.lineTo(pixel2.getX(), pixel2.getY());
-  }
-
-  /**
    * Draw the labels on the tile
    *
    * @param labels labels to draw
@@ -96,5 +77,24 @@ export class TileDraw {
       canvas.textAlign = 'center';
       canvas.fillText(name!, centerPixel.getX(), centerPixel.getY());
     }
+  }
+
+  /**
+   * Add the polyline to the path
+   *
+   * @param tile tile
+   * @param canvas line path
+   * @param line line to draw
+   */
+  private static addPolyline(tile: GridTile, canvas: CanvasRenderingContext2D, line: GridLine): void {
+    const metersLine = line.toMeters();
+    const point1 = metersLine.getPoint1();
+    const point2 = metersLine.getPoint2();
+
+    const pixel = point1.getPixelFromTile(tile);
+    canvas.moveTo(pixel.getX(), pixel.getY());
+
+    const pixel2 = point2.getPixelFromTile(tile);
+    canvas.lineTo(pixel2.getX(), pixel2.getY());
   }
 }

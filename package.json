@@ -18,17 +18,11 @@
   },
   "scripts": {
     "start": "ng serve",
-    "build": "npm-run-all build:app",
+    "build": "npm run build:app",
     "build:app": "ng build --prod=true",
     "ng": "ng",
-    "test": "ng test --code-coverage=false --project=app",
-    "lint:prettier": "prettier --check \"lib/**/*.ts\"",
-    "lint:tslint": "tslint -p tsconfig.json",
-    "lint": "npm run lint:tslint && npm run lint:prettier",
-    "fix:prettier": "prettier --write \"lib/**/*.ts\"",
-    "e2e": "ng e2e",
-    "pack:app": "cd dist && cd app && npm pack",
-    "bundle-report": "webpack-bundle-analyzer dist/stats.json"
+    "lint": "ng lint",
+    "fix:prettier": "prettier --write \"lib/**/*.ts\""
   },
   "files": [],
   "dependencies": {
@@ -129,6 +123,7 @@
     "stylus": "^0.54.8",
     "ts-node": "~7.0.0",
     "tslint": "~5.15.0",
+    "tslint-config-prettier": "^1.18.0",
     "typescript": "~3.8.3",
     "webpack": "^4.41.5",
     "webpack-bundle-analyzer": "^3.6.1"

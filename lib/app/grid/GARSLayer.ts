@@ -1,6 +1,6 @@
 import { Grids, GridType, ZoomGrids } from '@ngageoint/gars-js';
 import { GridTile } from '@ngageoint/grid-js';
-import { GridLayer, Coords, DoneCallback, DomUtil, GridLayerOptions } from 'leaflet';
+import { Coords, DomUtil, DoneCallback, GridLayer, GridLayerOptions } from 'leaflet';
 import { TileDraw } from './TileDraw';
 
 export class GARSLayer extends GridLayer {
@@ -44,7 +44,7 @@ export class GARSLayer extends GridLayer {
    * @param zoom zoom level
    * @return bitmap
    */
-  public drawTile(tile: HTMLCanvasElement, x: number, y: number, zoom: number): Promise<ImageBitmap | undefined> {
+  private drawTile(tile: HTMLCanvasElement, x: number, y: number, zoom: number): Promise<ImageBitmap | undefined> {
     let bitmap: Promise<ImageBitmap | undefined>;
     const zoomGrids = this.grids.getGrids(zoom);
     if (zoomGrids!.hasGrids()) {

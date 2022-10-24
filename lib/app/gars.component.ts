@@ -1,32 +1,30 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import * as L from 'leaflet';
 import { GARSLayer } from './grid/GARSLayer';
 
 @Component({
   selector: 'gars',
-  templateUrl: './gars.component.html',
   styleUrls: ['./gars.component.scss'],
+  templateUrl: './gars.component.html',
 })
-export class GarsComponent {
-  constructor() {}
+export class GarsComponent implements OnInit {
+  public layersControl: any = {};
 
-  onMapReady(map: L.Map) {
+  public ngOnInit(): void {
+    this.layersControl = {
+      baseLayers: {
+        'Open Street Map': L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+          attribution: '&copy <a href="http://openstreetmap.org">OpenStreetMap</a> contributors',
+          maxZoom: 18,
+        }),
+      },
+      overlays: {
+        GARS: L.GridLayer.extend(new GARSLayer()),
+      },
+    };
+  }
+
+  public onMapReady(map: L.Map) {
     map.setView(new L.LatLng(0, 0), 3);
-
-    // create the tile layer with correct attribution
-    const osmUrl = 'http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png';
-    const osmAttrib = '&copy <a href="http://openstreetmap.org">OpenStreetMap</a> contributors';
-    const osm = new L.TileLayer(osmUrl, { minZoom: 1, maxZoom: 20, attribution: osmAttrib });
-
-    map.addLayer(osm);
-
-    //const gars = new GARSLayer();
-    //map.addLayer(gars);
-
-    L.control
-      .layers({
-        osm: osm,
-      })
-      .addTo(map);
   }
 }
