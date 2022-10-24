@@ -17,9 +17,10 @@ export class GarsComponent implements OnInit {
           attribution: '&copy <a href="http://openstreetmap.org">OpenStreetMap</a> contributors',
           maxZoom: 18,
         }),
+        GARS: new GARSLayer(),
       },
       overlays: {
-        GARS: L.GridLayer.extend(new GARSLayer()),
+       
       },
     };
   }

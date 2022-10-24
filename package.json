@@ -21,8 +21,9 @@
   },
   "scripts": {
     "start": "ng serve",
-    "build": "npm run build:app",
+    "build": "npm run clean; npm run build:app",
     "build:app": "ng build --prod=true",
+    "clean": "rm -rf dist",
     "ng": "ng",
     "lint": "ng lint",
     "fix:prettier": "prettier --write \"lib/**/*.ts\""

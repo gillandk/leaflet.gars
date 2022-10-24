@@ -18,7 +18,7 @@
             "builder": "ngx-build-plus:browser",
             "options": {
               "extraWebpackConfig": "webpack.extra.js",
-              "outputPath": "dist/",
+              "outputPath": "dist/app",
               "index": "lib/index.html",
               "main": "lib/main.ts",
               "polyfills": "lib/polyfills.ts",
