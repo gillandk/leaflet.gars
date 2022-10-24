@@ -1,7 +1,13 @@
-import L from "leaflet";
-import { GARSLayer } from "./grid/GARSLayer";
+import { enableProdMode } from '@angular/core';
+import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 
-const map = L.map('map');
+import { AppModule } from './app/app.module';
+import { environment } from './environments/environment';
 
-const gars = new GARSLayer();
-map.addLayer(gars);
+if (environment.production) {
+  enableProdMode();
+}
+
+platformBrowserDynamic()
+  .bootstrapModule(AppModule)
+  .catch((err: any) => console.log(err));

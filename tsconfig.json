@@ -1,25 +1,27 @@
 {
-    "$schema": "https://json.schemastore.org/tsconfig",
+    "compileOnSave": false,
     "compilerOptions": {
-        "target": "es6",
-        "moduleResolution": "node",
-        "strict": true,
-        "esModuleInterop": true,
-        "skipLibCheck": true,
-        "forceConsistentCasingInFileNames": true,
-        "outDir": "./dist",                    /* Redirect output structure to the directory. */
-        "declaration": true,                   /* Generates corresponding '.d.ts' file. */
-        "declarationMap": true,                /* Generates a sourcemap for each corresponding '.d.ts' file. */
-        "sourceMap": true,                     /* Generates corresponding '.map' file. */
-        "resolveJsonModule": true
-    },
-    "exclude": [    
-          "**/*.d.ts",    
-          "node_modules",
-          "test"
+      "baseUrl": "./",
+      "outDir": "./dist/out-tsc",
+      "sourceMap": true,
+      "declaration": false,
+      "downlevelIteration": true,
+      "experimentalDecorators": true,
+      "module": "esnext",
+      "moduleResolution": "node",
+      "importHelpers": true,
+      "target": "es2015",
+      "skipLibCheck": true,
+      "typeRoots": [
+        "node_modules/@types"
       ],
-      "include": [
-          "lib",
-          "index.html"
+      "lib": [
+        "es2018",
+        "dom"
       ]
+    },
+    "angularCompilerOptions": {
+      "fullTemplateTypeCheck": true,
+      "strictInjectionParameters": true
+    }
   }
