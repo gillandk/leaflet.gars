@@ -4,3 +4,10 @@ This is used to test the Global Area Reference System [GARS](https://github.com/
 ### Build and Installation ###
 
 [![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square)](https://github.com/prettier/prettier)
+
+Build and Run via NPM
+```sh
+npm ci
+npm run build
+npm run start
+```
