@@ -4,7 +4,7 @@
 
 This is a standalone angular app used to test the Global Area Reference System [GARS](https://github.com/ngageoint/gars-js) library from the [National Geospatial-Intelligence Agency (NGA)](http://www.nga.mil/). 
 
-![Preview](preview.png)
+![Preview](preview.jpg)
 
 ## Dependencies
 
