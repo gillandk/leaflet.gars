@@ -24,7 +24,7 @@ export class GARSLayer extends GridLayer {
     // get a canvas context and draw something on it using coords.x, coords.y and coords.z
     const ctx = tile.getContext('2d');
 
-    this.drawTile(tile, coords.x, coords.y, this._map.getZoom())
+    this.drawTile(tile, coords.x, coords.y, coords.z)
       .then((bitmap) => {
         done(undefined, tile);
       })
