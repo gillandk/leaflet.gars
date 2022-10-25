@@ -9,7 +9,9 @@ This is a standalone angular app used to test the Global Area Reference System [
 
 ## Dependencies
 
-This app tries to mirror the angular and leaflet dependencies found in [MAGE](https://github.com/ngageoint/mage-server).
+This app tries to mirror the angular and leaflet dependencies found in [MAGE](https://github.com/ngageoint/mage-server).  More specifically, this means:
+1.  Angular 1.5
+2.  Leaflet 1.7
 
 ## Build and Installation
 
