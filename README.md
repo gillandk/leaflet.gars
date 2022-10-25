@@ -1,5 +1,6 @@
 # Leaflet.GARS
 
+![Build](https://github.com/gillandk/leaflet.gars/actions/workflows/build.yml/badge.svg)
 [![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square)](https://github.com/prettier/prettier)
 
 This is a standalone angular app used to test the Global Area Reference System [GARS](https://github.com/ngageoint/gars-js) library from the [National Geospatial-Intelligence Agency (NGA)](http://www.nga.mil/). 
