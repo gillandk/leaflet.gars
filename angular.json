@@ -44,12 +44,6 @@
                 ]
               },
               "scripts": [
-                "node_modules/jquery/dist/jquery.min.js",
-                "node_modules/jquery-minicolors/jquery.minicolors.min.js",
-                "node_modules/jquery-file-download/src/Scripts/jquery.fileDownload.js",
-                "node_modules/systemjs/dist/system.js",
-                "node_modules/systemjs/dist/extras/amd.js",
-                "node_modules/systemjs/dist/extras/named-register.js"
               ]
             },
             "configurations": {
@@ -88,7 +82,6 @@
             "builder": "ngx-build-plus:dev-server",
             "options": {
               "extraWebpackConfig": "webpack.extra.js",
-              "proxyConfig": "proxy.conf.json",
               "browserTarget": "app:build"
             },
             "configurations": {
