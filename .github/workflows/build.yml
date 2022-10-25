@@ -11,6 +11,14 @@ jobs:
     - name: Checkout Repository
       uses: actions/checkout@v1
 
+    - name: setup node
+      uses: actions/setup-node@v2
+      with:
+      # TODO: angular 9 build does not run on node > 14
+      node-version: 14
+      cache: npm
+      cache-dependency-path: package-lock.json
+
     - name: Install Dependencies
       run: npm ci
 
