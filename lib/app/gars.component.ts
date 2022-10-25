@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import * as L from 'leaflet';
 import { GARSLayer } from './grid/GARSLayer';
+import { ZoomControl } from './zoom/ZoomControl';
 
 @Component({
   selector: 'gars',
@@ -26,5 +27,6 @@ export class GarsComponent implements OnInit {
 
   public onMapReady(map: L.Map) {
     map.setView(new L.LatLng(0, 0), 3);
+    map.addControl(new ZoomControl({ position: 'bottomleft' }));
   }
 }
